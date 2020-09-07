@@ -2,7 +2,7 @@
 
 set +e
 
-for script in $(dirname $0)/setup_{brew,python,defaults,login}.sh; do
+for script in $(dirname $0)/setup_{zsh,brew,python,defaults,login}.sh; do
     source $script
 done
 
@@ -14,10 +14,8 @@ apps=(
 )
 
 
-if [[ ! -f $HOME/.oh-my-zsh ]]; then
-    echo "Installing oh-my-zsh..."
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-fi
+echo "Installing oh-my-zsh..."
+s_zsh
 
 echo "Installing brew packages / casks"
 s_brew
