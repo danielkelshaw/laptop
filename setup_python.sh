@@ -7,7 +7,7 @@ pyversions=(
 )
 
 
-function setup_python() {
+function s_python() {
     
     if command -v pyenv &>/dev/null; then
         eval "$(pyenv init -)"
@@ -49,6 +49,6 @@ EOF
 
 
 if [[ $0 == $BASH_SOURCE ]]; then
-    setup_python $1
+    s_python $1
 fi
 

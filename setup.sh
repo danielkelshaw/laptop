@@ -78,11 +78,11 @@ for pbrew in ${brews[@]}; do
 done
 
 echo "Installing Python versions..."
-setup_python --latest
+s_python --latest
 
 echo "Setting MacOS defaults..."
-set_defaults
+s_defaults
 
 echo "Setting Apps to open at login..."
-login_items
+s_login
 
