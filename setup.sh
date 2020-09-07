@@ -8,7 +8,9 @@ done
 
 
 apps=(
+    # need to `brew install mas` / write script
     441258766 # magnet
+    904280696 # things
 )
 
 
