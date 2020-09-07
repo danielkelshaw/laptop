@@ -28,15 +28,6 @@ function s_defaults() {
     # Disable the “Are you sure you want to open this application?” dialog
     defaults write com.apple.LaunchServices LSQuarantine -bool false
 
-###### MOUSE / KEYBOARD ###########################################################
-
-    # Use scroll gesture with the Ctrl (^) modifier key to zoom
-    defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
-    defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
-
-    # Follow the keyboard focus while zoomed in
-    defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
-
 ###### SCREEN #####################################################################
 
     # Save screenshots to the desktop
@@ -74,6 +65,15 @@ function s_defaults() {
 
     # Automatically hide and show the Dock
     defaults write com.apple.dock autohide -bool true
+
+    # Dock animation time (default=1)
+    defaults write com.apple.dock autohide-time-modifier -float 0.5
+
+    # Set Magnification Size
+    defaults write com.apple.dock magnification -bool false
+
+    # Only show running apps
+    defaults write com.apple.dock static-only -bool false
 
     # Restart Dock
     killall Dock
