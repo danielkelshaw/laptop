@@ -2,23 +2,18 @@
 
 set +e
 
-for script in $(dirname $0)/setup_{zsh,brew,python,defaults,login}.sh; do
+for script in $(dirname $0)/setup_{zsh,brew,mas,python,defaults,login}.sh; do
     source $script
 done
-
-
-apps=(
-    # need to `brew install mas` / write script
-    441258766 # magnet
-    904280696 # things
-)
-
 
 echo "Installing oh-my-zsh..."
 s_zsh
 
-echo "Installing brew packages / casks"
+echo "Installing brew packages / casks..."
 s_brew
+
+echo "Installing Mac App Store Apps..."
+s_mas
 
 echo "Installing Python versions..."
 s_python --latest
