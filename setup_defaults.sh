@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 function set_defaults() {
     
     # Quit any System Preferences Panes
@@ -83,7 +84,8 @@ function set_defaults() {
 
 }
 
-if [[ $0 = $BASH_SOURCE ]]; then
+
+if [[ $0 == $BASH_SOURCE ]]; then
     set_defaults
 fi
 

@@ -2,7 +2,7 @@
 
 set +e
 
-for script in $(dirname $0)/{pysetup,defaults}.sh; do
+for script in $(dirname $0)/setup_{python,defaults,login}.sh; do
     source $script
 done
 
@@ -11,6 +11,7 @@ casks=(
     docker
     github
     google-chrome
+    iterm2
     julia
     paraview
     pycharm
@@ -53,6 +54,11 @@ else
     brew doctor
 fi
 
+if [[ ! -f $HOME/.oh-my-zsh ]]; then
+    echo "Installing oh-my-zsh..."
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
+
 echo "Installing brew casks..."
 for cask in ${casks[@]}; do
     if brew cask install $cask; then
@@ -76,4 +82,7 @@ setup_python --latest
 
 echo "Setting MacOS defaults..."
 set_defaults
+
+echo "Setting Apps to open at login..."
+login_items
 
