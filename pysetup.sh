@@ -48,7 +48,7 @@ EOF
 }
 
 
-if [ $0 = $BASH_SOURCE ]; then
+if [[ $0 = $BASH_SOURCE ]]; then
     setup_python $1
 fi
 
