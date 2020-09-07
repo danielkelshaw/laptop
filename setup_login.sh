@@ -8,7 +8,7 @@ apps=(
 )
 
 
-function login_items() {
+function s_login() {
 
     osascript -e 'tell application "System Preferences" to quit'
     items=$(osascript -e 'tell application "System Events" to get the name of every login item')
@@ -24,6 +24,6 @@ function login_items() {
 
 
 if [[ $0 == $BASH_SOURCE ]]; then
-    login_items
+    s_login
 fi
 

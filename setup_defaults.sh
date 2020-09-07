@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-function set_defaults() {
+function s_defaults() {
     
     # Quit any System Preferences Panes
     osascript -e 'tell application "System Preferences" to quit'
@@ -86,6 +86,6 @@ function set_defaults() {
 
 
 if [[ $0 == $BASH_SOURCE ]]; then
-    set_defaults
+    s_defaults
 fi
 
