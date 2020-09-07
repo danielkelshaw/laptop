@@ -2,7 +2,8 @@
 
 set +e
 
-for script in $(dirname $0)/setup_{zsh,brew,mas,python,defaults,login}.sh; do
+# source setup scripts from ./src/ directory
+for script in $(dirname $0)/src/setup_{zsh,brew,mas,python,defaults,login}.sh; do
     source $script
 done
 
