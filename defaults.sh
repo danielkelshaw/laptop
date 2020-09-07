@@ -74,6 +74,9 @@ function set_defaults() {
     # Automatically hide and show the Dock
     defaults write com.apple.dock autohide -bool true
 
+    # Restart Dock
+    killall Dock
+
 ###################################################################################
 
     echo "Done. Note that some of these changes require a logout/restart to take effect."
